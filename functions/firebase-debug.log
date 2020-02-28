@@ -1,0 +1,139 @@
+[debug] [2020-02-28T20:10:55.298Z] ----------------------------------------------------------------------
+[debug] [2020-02-28T20:10:55.301Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\marci\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions:helloWorld --debug
+[debug] [2020-02-28T20:10:55.313Z] CLI Version:   7.14.0
+[debug] [2020-02-28T20:10:55.313Z] Platform:      win32
+[debug] [2020-02-28T20:10:55.313Z] Node Version:  v12.16.1
+[debug] [2020-02-28T20:10:55.315Z] Time:          Fri Feb 28 2020 16:10:55 GMT-0400 (Amazon Standard Time)
+[debug] [2020-02-28T20:10:55.315Z] ----------------------------------------------------------------------
+[debug] [2020-02-28T20:10:55.316Z] 
+[debug] [2020-02-28T20:10:55.327Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-28T20:10:55.337Z] > authorizing via signed-in user
+[debug] [2020-02-28T20:10:55.338Z] [iam] checking project algarve4all-d51e1 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2020-02-28T20:10:55.341Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/algarve4all-d51e1:testIamPermissions  
+
+[debug] [2020-02-28T20:10:56.370Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'algarve4all-d51e1'...
+[info] 
+[info] i  deploying functions
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] Running command: npm --prefix "$RESOURCE_DIR" run build
+[info] +  functions: Finished running predeploy script.
+[debug] [2020-02-28T20:11:08.886Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.3.0"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2",
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2020-02-28T20:11:08.899Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/algarve4all-d51e1/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2020-02-28T20:11:08.900Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/algarve4all-d51e1/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2020-02-28T20:11:10.097Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:10.150Z] <<< HTTP RESPONSE 200
+[info] +  functions: all necessary APIs are enabled
+[debug] [2020-02-28T20:11:10.152Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/algarve4all-d51e1/adminSdkConfig  
+ 
+[debug] [2020-02-28T20:11:11.344Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2020-02-28T20:11:11.348Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/algarve4all-d51e1/configs  
+ 
+[debug] [2020-02-28T20:11:12.643Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (33.34 KB) for uploading
+[debug] [2020-02-28T20:11:12.862Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/algarve4all-d51e1/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2020-02-28T20:11:14.661Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:14.664Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-e8dbc24e-20e5-4890-8676-1be787df41a7/396515e0-9c2c-46bb-926d-6bd5738cac75.zip?GoogleAccessId=service-369400100115@gcf-admin-robot.iam.gserviceaccount.com&Expires=1582922472&Signature=kSniHvGreY%2BCDbGzRfNHAds9dSNBjtkaAn0KCy9RZG%2FQDa3t%2F%2B3fCDvky7TTs%2BL0uhWPp3PzXOUcLPolA8ZW%2FrBZJXipmcMP96Fk2dhoLlLrpp0X0T0XQicZsg7DpT1abEU2e7dIHhwwLX0Jbm75PdtvgKtGEEma%2FIP0IHdTw2FVYrNGoR5cflnIRE97%2F666DOKlwU0SRgKqqp5bLhrndyn8z20XadtyWt0OHnpo9AJ9mjeBoNipea1juRgu7DMRe3kbAYTXXRz2Ruh0LbZz8HdPXm8JKmZt%2FgxznWSo9C%2F8jAYz7%2FMeixZbSMx3vbyVNcFIfzVOLekaSgStbaOeiQ%3D%3D  
+ <request body omitted>
+[debug] [2020-02-28T20:11:15.104Z] <<< HTTP RESPONSE 200
+[info] +  functions: functions folder uploaded successfully
+[debug] [2020-02-28T20:11:15.134Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/algarve4all-d51e1/locations/-/functions  
+ 
+[debug] [2020-02-28T20:11:15.690Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:15.695Z] > [functions] filtering triggers to: [
+  "projects/algarve4all-d51e1/locations/europe-west2/functions/helloWorld"
+]
+[info] i  functions: current functions in project: helloWorld(europe-west2), renderAdmin(us-central1), renderAirportTransferPortugal(us-central1), renderAlbufeiraCarHire(us-central1), renderAlgarveCarHire(us-central1), renderAlgarveTransfers(us-central1), renderCarHireLisbon(us-central1), renderCarvoeiroCarHire(us-central1), renderFaroCarHire(us-central1), renderLagosCarHire(us-central1), renderPortugalCarHire(us-central1), renderYorCar(us-central1)
+[info] i  functions: uploading functions in project: helloWorld(europe-west2)
+[info] i  functions: updating Node.js 8 function helloWorld(europe-west2)...
+[debug] [2020-02-28T20:11:15.721Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2020-02-28T20:11:15.722Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/algarve4all-d51e1/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2020-02-28T20:11:16.760Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:16.762Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/algarve4all-d51e1/locations/europe-west2/functions/helloWorld {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
+
+[debug] [2020-02-28T20:11:18.321Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:18.323Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/algarve4all-d51e1/locations/-/functions  
+ 
+[debug] [2020-02-28T20:11:18.874Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:18.876Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:20.298Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:22.307Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:23.637Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:25.641Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:26.093Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:28.096Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:28.554Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:30.556Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:31.094Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:33.108Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:34.423Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:36.425Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:37.738Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:39.741Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:41.059Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:43.060Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:44.396Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:46.399Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:47.698Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:49.706Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:51.023Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:53.025Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:54.367Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:56.370Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:11:56.826Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:11:58.843Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:12:00.171Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-28T20:12:02.173Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/YWxnYXJ2ZTRhbGwtZDUxZTEvZXVyb3BlLXdlc3QyL2hlbGxvV29ybGQvMmxQdllKX3N6aXc  
+ 
+[debug] [2020-02-28T20:12:03.546Z] <<< HTTP RESPONSE 200
+[info] +  functions[helloWorld(europe-west2)]: Successful update operation. 
+[info] 
+[info] +  Deploy complete!
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/algarve4all-d51e1/overview

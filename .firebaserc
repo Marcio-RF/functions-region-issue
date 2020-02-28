@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "algarve4all-d51e1"
+  },
+"targets": {
+    "algarve4all-d51e1": {
+      "hosting": {
+        "portugal-car-hire": [
+          "portugal-car-hire"
+        ]
+      }
+    }
+  }
+}
